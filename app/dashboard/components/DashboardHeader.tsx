@@ -14,11 +14,12 @@ export function DashboardHeader({
 }: DashboardHeaderProps) {
   return (
     <header
-      className="sticky top-0 z-10 bg-cover bg-center"
+      className="sticky top-0 z-10 bg-cover bg-center relative"
       style={{ backgroundImage: "url('/images/mkulima_auth_img.png')" }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        <span className="text-xl font-bold text-white">
+      <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <span className="text-xl font-extrabold text-white">
           Inua Mkulima Subsidy Program
         </span>
         <div className="flex items-center gap-4">

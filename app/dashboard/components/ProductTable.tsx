@@ -11,9 +11,7 @@ function AvailabilityBadge({ status }: { status: string }) {
   return (
     <span
       className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium whitespace-nowrap ${
-        inStock
-          ? "bg-green-50 text-green-700"
-          : "bg-red-50 text-red-600"
+        inStock ? "bg-green-50 text-green-700" : "bg-red-50 text-red-600"
       }`}
     >
       {status}
@@ -27,16 +25,16 @@ export function ProductTable({ products }: ProductTableProps) {
       <table className="w-full text-sm text-left">
         <thead className="bg-gray-50 text-xs uppercase text-gray-500 border-b border-gray-100">
           <tr>
-            <th className="px-4 py-3 font-semibold table-header">#</th>
-            <th className="px-4 py-3 font-semibold table-header"></th>
-            <th className="px-4 py-3 font-semibold table-header">Product</th>
-            <th className="px-4 py-3 font-semibold table-header whitespace-nowrap">Category</th>
-            <th className="px-4 py-3 font-semibold table-header">Brand</th>
-            <th className="px-4 py-3 font-semibold table-header">Price</th>
-            <th className="px-4 py-3 font-semibold table-header">Discount</th>
-            <th className="px-4 py-3 font-semibold table-header">Rating</th>
-            <th className="px-4 py-3 font-semibold table-header">Stock</th>
-            <th className="px-4 py-3 font-semibold table-header">Status</th>
+            <th className="table-header">#</th>
+            <th className="table-header"></th>
+            <th className="table-header">Product</th>
+            <th className="table-header">Category</th>
+            <th className="table-header">Brand</th>
+            <th className="table-header">Price</th>
+            <th className="table-header">Discount</th>
+            <th className=" table-header">Rating</th>
+            <th className="table-header">Stock</th>
+            <th className=" table-header">Status</th>
           </tr>
         </thead>
         <tbody className="divide-y divide-gray-50">
