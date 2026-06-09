@@ -3,24 +3,26 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary-color: #009633;
+  --secondary-color: #e8b409;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-primary-color: var(--primary-color);
+  --color-secondary-color: var(--secondary-color);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-lato);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-lato), sans-serif;
+}
+
+@layer components {
+  .table-header {
+    @apply text-secondary-color uppercase text-base font-semibold px-4 py-3;
+  }
 }
