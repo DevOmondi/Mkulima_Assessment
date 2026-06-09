@@ -18,6 +18,7 @@ export default function DashboardPage() {
   const [userImage, setUserImage] = useState<string | null>(null);
   const [authChecked, setAuthChecked] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [debouncedQuery, setDebouncedQuery] = useState("");
 
   useEffect(() => {
     const raw = sessionStorage.getItem("auth");
@@ -40,6 +41,11 @@ export default function DashboardPage() {
     setAuthChecked(true);
   }, [router]);
 
+  useEffect(() => {
+    const id = setTimeout(() => setDebouncedQuery(searchQuery), 300);
+    return () => clearTimeout(id);
+  }, [searchQuery]);
+
   const {
     data: products,
     isLoading,
@@ -58,7 +64,7 @@ export default function DashboardPage() {
   }
 
   const filteredProducts = products?.filter((p) =>
-    p.title.toLowerCase().includes(searchQuery.toLowerCase())
+    p.title.toLowerCase().includes(debouncedQuery.toLowerCase())
   );
 
   if (!authChecked) return null;
