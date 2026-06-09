@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { ChevronRight } from "lucide-react";
 
 export default function Auth() {
   const router = useRouter();
@@ -124,10 +125,11 @@ export default function Auth() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full rounded-lg py-2.5 text-sm font-semibold text-white shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary-color)] disabled:opacity-60 disabled:cursor-not-allowed"
+              className="group w-full flex items-center justify-center gap-1.5 rounded-lg py-2.5 text-sm font-semibold text-white shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary-color)] disabled:opacity-60 disabled:cursor-not-allowed"
               style={{ backgroundColor: "var(--secondary-color)" }}
             >
               {loading ? "Signing in…" : "Sign in"}
+              <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </button>
           </form>
         </div>

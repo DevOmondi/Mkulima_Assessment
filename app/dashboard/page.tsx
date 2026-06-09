@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 
 import type { AuthData } from "./types";
-import { fetchProducts } from "./api";
+import { fetchProducts } from "./utils/api";
 import { DashboardHeader } from "./components/DashboardHeader";
 import { ProductTable } from "./components/ProductTable";
 import { ProductTableSkeleton } from "./components/ProductTableSkeleton";

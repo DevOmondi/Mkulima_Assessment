@@ -1,4 +1,4 @@
-import type { Product } from "./types";
+import type { Product } from "../types";
 
 export async function fetchProducts(): Promise<Product[]> {
   const res = await fetch(process.env.NEXT_PUBLIC_PRODUCTS_API_URL!);
