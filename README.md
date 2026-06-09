@@ -44,7 +44,7 @@ pnpm install
 
 **3. Configure environment variables**
 
-Create a `.env.local` file in the project root:
+Create a `.env` file in the project root:
 
 ```env
 NEXT_PUBLIC_AUTH_API_URL=<your-auth-api-endpoint>
